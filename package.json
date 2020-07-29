@@ -1,0 +1,30 @@
+{
+  "version": "0.1.0",
+  "name": "laravel-mix-vue3",
+  "description": "A Laravel Mix extension for Vue 3, Typescript and JSX.",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/KABBOUCHI/laravel-mix-vue3.git"
+  },
+  "keywords": [
+    "laravel",
+    "laravel mix",
+    "mix",
+    "webpack",
+    "vue3",
+    "vue 3",
+    "jsx",
+    "tsx",
+    "typescript"
+  ],
+  "author": "Georges KABBOUCHI",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/KABBOUCHI/laravel-mix-vue3/issues"
+  },
+  "homepage": "https://github.com/KABBOUCHI/laravel-mix-vue3#readme",
+  "peerDependencies": {
+    "laravel-mix": ">=5.0.0"
+  }
+}
