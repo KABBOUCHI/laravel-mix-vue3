@@ -41,7 +41,7 @@ class Vue3 {
    * @param {*} entry
    * @param {string} output
    */
-  register(entry, output, options) {
+  register(entry, output, options = { jsx: false, typescript: false }) {
     this.options = options;
 
     if (this.options.jsx && !fs.existsSync(".babelrc")) {
