@@ -118,7 +118,7 @@ class Vue3 {
    * @param {Object} webpackConfig
    */
   webpackConfig(webpackConfig) {
-    webpackConfig.resolve.alias = {};
+    delete webpackConfig.resolve.alias["vue$"];
     webpackConfig.resolve.extensions = [
       "*",
       ".js",
