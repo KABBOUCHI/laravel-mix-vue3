@@ -51,8 +51,8 @@ const mix = require("laravel-mix");
 
 require("laravel-mix-vue3");
 
-mix.vue3("resources/js/app.js", "public/js", {
-  typescript: true,
+mix.vue3("resources/js/app.jsx", "public/js", {
+  jsx: true,
 });
 ```
 
@@ -63,7 +63,7 @@ const mix = require("laravel-mix");
 
 require("laravel-mix-vue3");
 
-mix.vue3("resources/js/app.js", "public/js", {
+mix.vue3("resources/js/app.tsx", "public/js", {
   typescript: true,
   jsx: true,
 });
