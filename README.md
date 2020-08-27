@@ -24,6 +24,8 @@ yarn add @vue/compiler-sfc vue-loader@next laravel-mix-vue3 -D
 
 Then, require it within your `webpack.mix.js` file, like so:
 
+### Basic
+
 ```js
 const mix = require("laravel-mix");
 
@@ -32,7 +34,7 @@ require("laravel-mix-vue3");
 mix.vue3("resources/js/app.js", "public/js");
 ```
 
-Enable Typescript
+### Enable Typescript
 
 ```js
 const mix = require("laravel-mix");
@@ -44,7 +46,7 @@ mix.vue3("resources/js/app.js", "public/js", {
 });
 ```
 
-Enable JSX
+### Enable JSX
 
 ```js
 const mix = require("laravel-mix");
@@ -56,7 +58,7 @@ mix.vue3("resources/js/app.jsx", "public/js", {
 });
 ```
 
-Enable TSX
+### Enable TSX
 
 ```js
 const mix = require("laravel-mix");
