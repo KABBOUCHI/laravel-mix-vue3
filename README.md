@@ -17,9 +17,9 @@ yarn add laravel-mix-vue3 -D
 Make sure to install the below if Laravel Mix failed to install them
 
 ```
-npm install @vue/compiler-sfc vue-loader@next laravel-mix-vue3  --save-dev
+npm install @types/webpack-env @vue/compiler-sfc vue-loader@next laravel-mix-vue3  --save-dev
 // or
-yarn add @vue/compiler-sfc vue-loader@next laravel-mix-vue3 -D
+yarn add @types/webpack-env @vue/compiler-sfc vue-loader@next laravel-mix-vue3 -D
 ```
 
 Then, require it within your `webpack.mix.js` file, like so:
