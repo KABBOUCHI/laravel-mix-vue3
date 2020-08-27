@@ -21,12 +21,18 @@ class Vue3 {
    * Required dependencies for the component.
    */
   dependencies() {
-    return [
-      "@ant-design-vue/babel-plugin-jsx",
-      "vue@next",
-      "@vue/compiler-sfc",
-      "vue-loader@next",
-    ];
+    let deps = ["@vue/compiler-sfc", "vue-loader@next", "vue@next"];
+
+    if (this.options.jsx) {
+      deps.push("@ant-design-vue/babel-plugin-jsx");
+    }
+
+    if (this.options.typescript) {
+      deps.push("typescript");
+      deps.push("ts-loader");
+    }
+
+    return deps;
   }
 
   /**
@@ -35,16 +41,18 @@ class Vue3 {
    * @param {*} entry
    * @param {string} output
    */
-  register(entry, output) {
-    if (!fs.existsSync(".babelrc")) {
+  register(entry, output, options) {
+    this.options = options;
+
+    if (this.options.jsx && !fs.existsSync(".babelrc")) {
       fs.copyFileSync(__dirname + "/stubs/.babelrc", ".babelrc");
     }
 
-    if (!fs.existsSync("tsconfig.json")) {
+    if (this.options.typescript && !fs.existsSync("tsconfig.json")) {
       fs.copyFileSync(__dirname + "/stubs/tsconfig.json", "tsconfig.json");
     }
 
-    if (!fs.existsSync("shims-vue.d.ts")) {
+    if (this.options.typescript && !fs.existsSync("shims-vue.d.ts")) {
       fs.copyFileSync(__dirname + "/stubs/shims-vue.d.ts", "shims-vue.d.ts");
     }
 
@@ -79,14 +87,7 @@ class Vue3 {
    * webpack rules to be appended to the master config.
    */
   webpackRules() {
-    return [
-      {
-        test: /\.(js|jsx)$/,
-        exclude: /node_modules/,
-        use: {
-          loader: "babel-loader",
-        },
-      },
+    let rules = [
       {
         test: /\.vue$/,
         use: [
@@ -95,8 +96,19 @@ class Vue3 {
           },
         ],
       },
+
       {
-        test: /\.(ts|tsx)$/,
+        test: this.options.jsx ? /\.(js|jsx)$/ : /\.(js)$/,
+        exclude: /node_modules/,
+        use: {
+          loader: "babel-loader",
+        },
+      },
+    ];
+
+    if (this.options.typescript) {
+      rules.push({
+        test: this.options.jsx ? /\.(ts|tsx)$/ : /\.(ts)$/,
         exclude: /node_modules/,
         use: [
           {
@@ -108,8 +120,10 @@ class Vue3 {
             options: { appendTsSuffixTo: [/\.vue$/] },
           },
         ],
-      },
-    ];
+      });
+    }
+
+    return rules;
   }
 
   /**
