@@ -24,7 +24,7 @@ class Vue3 {
     let deps = ["@vue/compiler-sfc", "vue-loader@next", "vue@next"];
 
     if (this.options.jsx) {
-      deps.push("@ant-design-vue/babel-plugin-jsx");
+      deps.push("@vue/babel-plugin-jsx");
     }
 
     if (this.options.typescript) {

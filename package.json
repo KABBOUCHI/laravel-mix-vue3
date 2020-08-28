@@ -1,5 +1,5 @@
 {
-  "version": "0.4.3",
+  "version": "0.5.0",
   "name": "laravel-mix-vue3",
   "description": "A Laravel Mix extension for Vue 3, Typescript and JSX.",
   "main": "index.js",
