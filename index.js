@@ -64,8 +64,6 @@ class Vue3 {
     output = new File(output);
 
     this.toCompile.push({ entry, output });
-
-    Mix.bundlingJavaScript = true;
   }
 
   /**
