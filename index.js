@@ -130,7 +130,8 @@ class Vue3 {
    * @param {Object} webpackConfig
    */
   webpackConfig(webpackConfig) {
-    delete webpackConfig.resolve.alias["vue$"];
+    webpackConfig.resolve.alias["vue$"] = 'vue/dist/vue.esm-bundler.js';
+
     webpackConfig.resolve.extensions = [
       "*",
       ".js",
