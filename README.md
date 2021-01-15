@@ -1,4 +1,4 @@
-# Laravel Mix - Vue 3
+# Laravel Mix v5 - Vue 3
 
 A Laravel Mix extension for Vue 3, Typescript and JSX.
 
