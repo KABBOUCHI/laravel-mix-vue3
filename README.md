@@ -2,7 +2,7 @@
 
 A Laravel Mix extension for Vue 3, Typescript and JSX.
 
-<b>Deprecated use [Laravel Mix v6](https://github.com/JeffreyWay/laravel-mix/blob/master/UPGRADE.md)</b>
+<b>Deprecated use [Laravel Mix v6](https://laravel-mix.com/docs)</b>
 
 ## Usage
 
